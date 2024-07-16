@@ -1,41 +1,55 @@
+import animal.Animal;
+import animal.Bowl;
+import animal.Cat;
+import animal.Dog;
+import figure.Circle;
+import figure.Rectangle;
+import figure.Triangle;
 
 public class Main {
     public static void main(String[] args) {
 
-        Employee employee = new Employee("Ivanov Ivan Ivanych", "Engineer",
-                "ivivan@mailbox.com", "892312312", 80000, 30);
-
         System.out.println("_________Task 1_________");
-        employee.getEmployeeInfo();
+        Animal animal1 = new Animal("Gosha");
+        Animal animal2 = new Animal("Grisha");
 
-        System.out.println("_________Task 2_________");
-        Person[] persArray = new Person[5];
-        persArray[0] = new Person("Ivanov Ivan Ivanych", "Engineer",
-                "ivivan@mailbox.com", "892312312", 80000, 30);
-        persArray[1] = new Person("Ekaterina Sergeevna Ivanova", "Developer",
-                "ekaterina.ivanova@example.com", "1234567890", 90000, 30);
-        persArray[2] = new Person("Natalya Mikhaylovya Petrova", "Project manager",
-                "nataly.petrova@example.com", "0987654321", 95000, 35);
-        persArray[3] = new Person("Sergey Pavlovich Voronov", "Database administrator",
-                "sergey.voronov@example.com", "3344556677", 85000, 33);
-        persArray[4] = new Person("Maria Dmitrievna Popova", "Tester",
-                "maria.popova@example.com", "2233445566", 70000, 24);
+        animal1.run(200);
 
-        for (Person emp : persArray) {
-            System.out.println(emp);
+        Cat catMax = new Cat("Max");
+        catMax.swim(200);
+
+        Cat[] cats = new Cat[5];
+        cats[0] = new Cat("Murzik");
+        cats[1] = catMax;
+        cats[2] = new Cat("Murka");
+        cats[3] = new Cat("Pushok");
+        cats[4] = new Cat("Barsik");
+
+        Bowl bowl = new Bowl();
+        bowl.setBowl(100);
+
+        for (Cat cat : cats) {
+            cat.feedCat(bowl, 40);
+        }
+        for (Cat cat : cats) {
+            cat.getSatirty();
         }
 
-        System.out.println("_________Task 3_________");
-        Park park = new Park("Itchy & Scratchy Land");
-        park.addAttraction("Insano", 12.20, "11:00 AM - 23:00 PM");
-        park.addAttraction("White Cyclone", 52.45, "11:00 AM - 23:00 PM");
-        park.addAttraction("Formula Rossa", 28.13, "11:00 AM - 23:00 PM");
+        Dog dogBobik = new Dog("Бобик");
+        dogBobik.swim(10);
 
-        park.getAttractionInfo();
-        park.deleteAttraction(1);
-        park.updatePrice("Insano", 46.88);
-        park.updateWorkingHours("Formula Rossa","Temporarily not working");
-        park.getAttractionInfo();
+        System.out.println(Cat.getCounterCat());
+        System.out.println(Animal.getAnimalNumber());
+
+        System.out.println("_________Task 2_________");
+        Circle circle = new Circle("red", "black", new double[]{15});
+        circle.displayFigure();
+
+        Triangle triangle = new Triangle("green", "white", new double[]{7, 5, 3});
+        triangle.displayFigure();
+
+        Rectangle rectangle = new Rectangle("yellow", "braun", new double[]{7, 5});
+        rectangle.displayFigure();
     }
 }
 
