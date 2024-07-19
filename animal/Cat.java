@@ -1,8 +1,6 @@
 package animal;
 
 public class Cat extends Animal {
-    private int maxDistanceRun = 200;
-    private int maxDistanceSwim = 0;
     private boolean satiety = false;
     private static int counterCat = 0;
 
@@ -14,20 +12,26 @@ public class Cat extends Animal {
 
     @Override
     public void run(int distance) {
-        if (distance > maxDistanceRun) {
+        int maxDistanceRun = 200;
+        if (distance < 0) {
+            System.out.println("Отрицательная дистанция");
+        } else if (distance > maxDistanceRun) {
             System.out.println("Слишком далеко");
         } else super.run(distance);
     }
 
     @Override
     public void swim(int distance) {
-        if (distance > maxDistanceSwim) {
+        int maxDistanceSwim = 0;
+        if (distance < 0) {
+            System.out.println("Отрицательная дистанция");
+        } else if (distance > maxDistanceSwim) {
             System.out.println("Кот не умеет плавать");
         } else super.swim(distance);
     }
 
-    public static int getCounterCat() {
-        return counterCat;
+    public static void getCounterCat() {
+        System.out.println(counterCat);
     }
 
     public void feedCat(Bowl bowl, int food) {
@@ -36,15 +40,15 @@ public class Cat extends Animal {
         } else {
             satiety = true;
             bowl.setBowl(-food);
-            System.out.println("Накормлен");
+            System.out.println(getName() + " - накормлен");
         }
     }
 
     public void getSatirty() {
         if (satiety) {
-            System.out.println("Сытый кот");
+            System.out.println(getName() + " - cытый кот");
         } else {
-            System.out.println("Голодный кот");
+            System.out.println(getName() + " - голодный кот");
         }
     }
 
