@@ -9,15 +9,25 @@ public class Animal {
         counterAnimal++;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void run(int distance) {
-        System.out.println(name + " пробежал " + distance + "м.");
+        if (distance < 0) {
+            System.out.println("Отрицательная дистанция");
+        } else
+            System.out.println(getName() + " пробежал " + distance + "м.");
     }
 
     public void swim(int distance) {
-        System.out.println(name + " проплыл " + distance + "м.");
+        if (distance < 0) {
+            System.out.println("Отрицательная дистанция");
+        } else
+            System.out.println(getName() + " проплыл " + distance + "м.");
     }
 
-    public static int getAnimalNumber() {
-        return counterAnimal;
+    public static void getAnimalNumber() {
+        System.out.println(Animal.class.getSimpleName() + " - " + counterAnimal + " шт");
     }
 }

@@ -1,8 +1,6 @@
 package animal;
 
 public class Dog extends Animal {
-    private int maxDistanceRun = 500;
-    private int maxDistanceSwim = 10;
     private static int counterDog = 0;
 
     public Dog(String name) {
@@ -12,7 +10,10 @@ public class Dog extends Animal {
 
     @Override
     public void run(int distance) {
-        if (distance > maxDistanceRun) {
+        int maxDistanceRun = 500;
+        if (distance < 0) {
+            System.out.println("Отрицательная дистанция");
+        } else if (distance > maxDistanceRun) {
             System.out.println("Слишком далеко");
         } else super.run(distance);
     }
@@ -20,12 +21,15 @@ public class Dog extends Animal {
 
     @Override
     public void swim(int distance) {
-        if (distance > maxDistanceSwim) {
+        int maxDistanceSwim = 10;
+        if (distance < 0) {
+            System.out.println("Отрицательная дистанция");
+        } else if (distance > maxDistanceSwim) {
             System.out.println("Слишком далеко");
         } else super.swim(distance);
     }
 
-    public static int getCounterDog() {
-        return counterDog;
+    public static void getCounterDog() {
+        System.out.println(counterDog);
     }
 }

@@ -10,10 +10,6 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("_________Task 1_________");
-        Animal animal1 = new Animal("Gosha");
-        Animal animal2 = new Animal("Grisha");
-
-        animal1.run(200);
 
         Cat catMax = new Cat("Max");
         catMax.swim(200);
@@ -24,6 +20,8 @@ public class Main {
         cats[2] = new Cat("Murka");
         cats[3] = new Cat("Pushok");
         cats[4] = new Cat("Barsik");
+
+        Cat.getCounterCat();
 
         Bowl bowl = new Bowl();
         bowl.setBowl(100);
@@ -36,10 +34,10 @@ public class Main {
         }
 
         Dog dogBobik = new Dog("Бобик");
-        dogBobik.swim(10);
+        dogBobik.swim(5);
 
-        System.out.println(Cat.getCounterCat());
-        System.out.println(Animal.getAnimalNumber());
+        Dog.getCounterDog();
+        Animal.getAnimalNumber();
 
         System.out.println("_________Task 2_________");
         Circle circle = new Circle("red", "black", new double[]{15});
