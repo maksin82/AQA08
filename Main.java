@@ -7,6 +7,7 @@ import figure.Triangle;
 
 public class Main {
     public static void main(String[] args) {
+      
         System.out.println("_________Task 1_________");
 
         Cat[] cats = new Cat[5];
@@ -19,15 +20,6 @@ public class Main {
         cats[0].swim(200);
         Cat.getCounterCat();
 
-        Bowl bowl = new Bowl();
-        bowl.setBowl(100);
-
-        for (Cat cat : cats) {
-            cat.feedCat(bowl, 40);
-        }
-        for (Cat cat : cats) {
-            cat.getSatirty();
-        }
 
         Dog dogBobik = new Dog("Бобик");
         dogBobik.swim(5);
@@ -46,4 +38,3 @@ public class Main {
         rectangle.displayFigure();
     }
 }
-
