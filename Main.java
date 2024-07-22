@@ -1,34 +1,48 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import animal.Bowl;
+import animal.Cat;
+import animal.Dog;
+import figure.Circle;
+import figure.Rectangle;
+import figure.Triangle;
 
 public class Main {
     public static void main(String[] args) {
-
-        String[] wordsArray = {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "consectetur", "elit", "sit", "vel", "consectetur", "odio", "proin", "sit", "non", "consectetur"};
-
+      
         System.out.println("_________Task 1_________");
-        HashSet<String> set = new HashSet<>(Arrays.asList(wordsArray));
-        System.out.println(set);
 
-        Map<String, Integer> worldCount = new HashMap<>();
-        for (String s : wordsArray) {
-            int count = worldCount.getOrDefault(s, 0);
-            worldCount.put(s, count + 1);
+        Cat[] cats = new Cat[5];
+        cats[0] = new Cat("Мурзик");
+        cats[1] = new Cat("Семка");
+        cats[2] = new Cat("Мурка");
+        cats[3] = new Cat("Пушок");
+        cats[4] = new Cat("Барсик");
+
+        cats[0].swim(200);
+        Cat.getCounterCat();
+
+        Bowl bowl = new Bowl();
+        bowl.setBowl(200);
+
+        for (Cat cat: cats) {
+            cat.feedCat(bowl, 50);
+            cat.getSatirty();
         }
-        System.out.println(worldCount);
+
+
+        Dog dogBobik = new Dog("Бобик");
+        dogBobik.swim(5);
+
+        Dog.getCounterDog();
 
         System.out.println("\n_________Task 2_________");
-        PhoneBook greenPage = new PhoneBook();
-        greenPage.addPhone("Aleksandrov", "293048");
-        greenPage.addPhone("Vasechkin", "293049");
-        greenPage.addPhone("Aleksandrov", "1946167464");
 
-        greenPage.getPhone("Aleksandrov");
-        greenPage.getPhone("Vasechkin");
+        Circle circle = new Circle("red", "black", new double[]{14});
+        circle.displayFigure();
 
+        Triangle triangle = new Triangle("green", "white", new double[]{7, 5, 3});
+        triangle.displayFigure();
+
+        Rectangle rectangle = new Rectangle("yellow", "braun", new double[]{7, 5});
+        rectangle.displayFigure();
     }
 }
-
-
