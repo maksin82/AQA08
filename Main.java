@@ -1,41 +1,59 @@
 
 public class Main {
     public static void main(String[] args) {
-
-        Employee employee = new Employee("Ivanov Ivan Ivanych", "Engineer",
-                "ivivan@mailbox.com", "892312312", 80000, 30);
-
-        System.out.println("_________Task 1_________");
-        employee.getEmployeeInfo();
-
-        System.out.println("_________Task 2_________");
-        Person[] persArray = new Person[5];
-        persArray[0] = new Person("Ivanov Ivan Ivanych", "Engineer",
-                "ivivan@mailbox.com", "892312312", 80000, 30);
-        persArray[1] = new Person("Ekaterina Sergeevna Ivanova", "Developer",
-                "ekaterina.ivanova@example.com", "1234567890", 90000, 30);
-        persArray[2] = new Person("Natalya Mikhaylovya Petrova", "Project manager",
-                "nataly.petrova@example.com", "0987654321", 95000, 35);
-        persArray[3] = new Person("Sergey Pavlovich Voronov", "Database administrator",
-                "sergey.voronov@example.com", "3344556677", 85000, 33);
-        persArray[4] = new Person("Maria Dmitrievna Popova", "Tester",
-                "maria.popova@example.com", "2233445566", 70000, 24);
-
-        for (Person emp : persArray) {
-            System.out.println(emp);
+        String[][] arr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
+        String[][] arrSize = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2", "4"}};
+        String[][] arrStr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "one", "2"}};
+        String[][] arrChar = {{"1", "2", "%", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
+        try {
+            System.out.println(sumArr(arr));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
         }
 
-        System.out.println("_________Task 3_________");
-        Park park = new Park("Itchy & Scratchy Land");
-        park.addAttraction("Insano", 12.20, "11:00 AM - 23:00 PM");
-        park.addAttraction("White Cyclone", 52.45, "11:00 AM - 23:00 PM");
-        park.addAttraction("Formula Rossa", 28.13, "11:00 AM - 23:00 PM");
+        try {
+            System.out.println(sumArr(arrSize));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
 
-        park.getAttractionInfo();
-        park.deleteAttraction(1);
-        park.updatePrice("Insano", 46.88);
-        park.updateWorkingHours("Formula Rossa","Temporarily not working");
-        park.getAttractionInfo();
+        try {
+            System.out.println(sumArr(arrStr));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println(sumArr(arrChar));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    public static int sumArr(String[][] arr) {
+        int sum = 0;
+
+        if (arr.length != 4) {
+            throw new MyArraySizeException();
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i].length != 4) {
+                    throw new MyArraySizeException();
+                }
+                try {
+                    sum += Integer.parseInt(arr[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException(i, j);
+                }
+            }
+        }
+        return sum;
     }
 }
 
