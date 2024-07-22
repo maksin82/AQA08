@@ -35,7 +35,7 @@ public class Main {
     }
 
 
-    public static int sumArr(String[][] arr) {
+    public static int sumArr(String[][] arr) throws MyArrayDataException, MyArraySizeException {
         int sum = 0;
 
         if (arr.length != 4) {
