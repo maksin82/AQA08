@@ -1,53 +1,34 @@
-import animal.Animal;
-import animal.Bowl;
-import animal.Cat;
-import animal.Dog;
-import figure.Circle;
-import figure.Rectangle;
-import figure.Triangle;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
 
+        String[] wordsArray = {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "consectetur", "elit", "sit", "vel", "consectetur", "odio", "proin", "sit", "non", "consectetur"};
+
         System.out.println("_________Task 1_________");
+        HashSet<String> set = new HashSet<>(Arrays.asList(wordsArray));
+        System.out.println(set);
 
-        Cat catMax = new Cat("Max");
-        catMax.swim(200);
-
-        Cat[] cats = new Cat[5];
-        cats[0] = new Cat("Murzik");
-        cats[1] = catMax;
-        cats[2] = new Cat("Murka");
-        cats[3] = new Cat("Pushok");
-        cats[4] = new Cat("Barsik");
-
-        Cat.getCounterCat();
-
-        Bowl bowl = new Bowl();
-        bowl.setBowl(100);
-
-        for (Cat cat : cats) {
-            cat.feedCat(bowl, 40);
+        Map<String, Integer> worldCount = new HashMap<>();
+        for (String s : wordsArray) {
+            int count = worldCount.getOrDefault(s, 0);
+            worldCount.put(s, count + 1);
         }
-        for (Cat cat : cats) {
-            cat.getSatirty();
-        }
-
-        Dog dogBobik = new Dog("Бобик");
-        dogBobik.swim(5);
-
-        Dog.getCounterDog();
-        Animal.getAnimalNumber();
+        System.out.println(worldCount);
 
         System.out.println("_________Task 2_________");
-        Circle circle = new Circle("red", "black", new double[]{15});
-        circle.displayFigure();
+        PhoneBook greenPage = new PhoneBook();
+        greenPage.addPhone("Aleksandrov", "293048");
+        greenPage.addPhone("Vasechkin", "293049");
+        greenPage.addPhone("Aleksandrov", "1946167464");
 
-        Triangle triangle = new Triangle("green", "white", new double[]{7, 5, 3});
-        triangle.displayFigure();
-
-        Rectangle rectangle = new Rectangle("yellow", "braun", new double[]{7, 5});
-        rectangle.displayFigure();
+        greenPage.getPhone("Aleksandrov");
+        greenPage.getPhone("Vasechkin");
     }
 }
+
 
