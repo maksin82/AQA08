@@ -7,7 +7,6 @@ import figure.Triangle;
 
 public class Main {
     public static void main(String[] args) {
-
         System.out.println("_________Task 1_________");
 
         Cat[] cats = new Cat[5];
