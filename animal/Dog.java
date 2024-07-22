@@ -30,6 +30,12 @@ public class Dog extends Animal {
     }
 
     public static void getCounterDog() {
-        System.out.println(counterDog);
+        if (counterDog % 10 == 1 && counterDog % 100 != 11) {
+            System.out.println(counterDog + " собака");
+        } else if ((counterDog % 10 >= 2 && counterDog % 10 <= 4) && !(counterDog % 100 >= 12 && counterDog % 100 <= 14)) {
+            System.out.println(counterDog + " собаки");
+        } else {
+            System.out.println(counterDog + " собак");
+        }
     }
 }
