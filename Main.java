@@ -36,7 +36,7 @@ public class Main {
 
         System.out.println("_________Task 2_________");
 
-        Circle circle = new Circle("red", "black", new double[]{15});
+        Circle circle = new Circle("red", "black", new double[]{14});
         circle.displayFigure();
 
         Triangle triangle = new Triangle("green", "white", new double[]{7, 5, 3});
