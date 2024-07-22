@@ -1,34 +1,58 @@
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-
 public class Main {
     public static void main(String[] args) {
-
-        String[] wordsArray = {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "consectetur", "elit", "sit", "vel", "consectetur", "odio", "proin", "sit", "non", "consectetur"};
-
-        System.out.println("_________Task 1_________");
-        HashSet<String> set = new HashSet<>(Arrays.asList(wordsArray));
-        System.out.println(set);
-
-        Map<String, Integer> worldCount = new HashMap<>();
-        for (String s : wordsArray) {
-            int count = worldCount.getOrDefault(s, 0);
-            worldCount.put(s, count + 1);
+        String[][] arr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
+        String[][] arrSize = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2", "4"}};
+        String[][] arrStr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "one", "2"}};
+        String[][] arrChar = {{"1", "2", "%", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
+        try {
+            System.out.println(sumArr(arr));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println(worldCount);
 
-        System.out.println("_________Task 2_________");
-        PhoneBook greenPage = new PhoneBook();
-        greenPage.addPhone("Aleksandrov", "293048");
-        greenPage.addPhone("Vasechkin", "293049");
-        greenPage.addPhone("Aleksandrov", "1946167464");
+        try {
+            System.out.println(sumArr(arrSize));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
 
-        greenPage.getPhone("Aleksandrov");
-        greenPage.getPhone("Vasechkin");
+        try {
+            System.out.println(sumArr(arrStr));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println(sumArr(arrChar));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    public static int sumArr(String[][] arr) {
+        int sum = 0;
+
+        if (arr.length != 4) {
+            throw new MyArraySizeException();
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i].length != 4) {
+                    throw new MyArraySizeException();
+                }
+                try {
+                    sum += Integer.parseInt(arr[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException(i, j);
+                }
+            }
+        }
+        return sum;
     }
 }
-
-
