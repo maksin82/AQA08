@@ -28,15 +28,15 @@ public class Main {
             cat.getSatirty();
         }
 
-
+        
         Dog dogBobik = new Dog("Бобик");
         dogBobik.swim(5);
 
         Dog.getCounterDog();
 
-        System.out.println("\n_________Task 2_________");
+        System.out.println("_________Task 2_________");
 
-        Circle circle = new Circle("red", "black", new double[]{14});
+        Circle circle = new Circle("red", "black", new double[]{15});
         circle.displayFigure();
 
         Triangle triangle = new Triangle("green", "white", new double[]{7, 5, 3});
