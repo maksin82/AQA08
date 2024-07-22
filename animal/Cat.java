@@ -57,6 +57,4 @@ public class Cat extends Animal {
             System.out.println(getName() + " - голодный кот");
         }
     }
-
-
 }

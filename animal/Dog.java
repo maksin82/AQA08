@@ -18,7 +18,6 @@ public class Dog extends Animal {
         } else super.run(distance);
     }
 
-
     @Override
     public void swim(int distance) {
         int maxDistanceSwim = 10;

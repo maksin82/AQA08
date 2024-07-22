@@ -1,7 +1,6 @@
 package figure;
 
 public class Circle extends Figure {
-
     public Circle(String backgroundColor, String borderColor, double[] arr) {
         super(backgroundColor, borderColor, arr);
     }

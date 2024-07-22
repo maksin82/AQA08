@@ -1,5 +1,6 @@
 package animal;
 
+
 public class Bowl {
     private int bowl;
 

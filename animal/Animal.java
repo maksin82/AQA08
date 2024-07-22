@@ -30,4 +30,5 @@ abstract class Animal {
     public static void getAnimalNumber() {
         System.out.println(Animal.class.getSimpleName() + " - " + counterAnimal + " шт");
     }
+
 }

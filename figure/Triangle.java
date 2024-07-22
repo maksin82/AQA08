@@ -10,5 +10,4 @@ public class Triangle extends Figure implements Area, Perimetr{
         double s = calculatePerimeter() / 2;
         return Math.round(Math.sqrt(s * (s - arr[0]) * (s - arr[1]) * (s - arr[2])));
     }
-
 }

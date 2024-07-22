@@ -1,9 +1,9 @@
 package figure;
 
 public abstract class Figure implements Perimetr, Area {
-    private String backgroundColor;
-    private String borderColor;
-    private double[] param;
+    private final String backgroundColor;
+    private final String borderColor;
+    private final double[] param;
 
     public Figure(String backgroundColor, String borderColor, double[] param) {
         this.backgroundColor = backgroundColor;
@@ -26,4 +26,5 @@ public abstract class Figure implements Perimetr, Area {
     public void displayFigure() {
         System.out.printf("Периметр: %s, площадь: %s, цвет фона: %s, цвет границ: %s\n", calculatePerimeter(), calculateArea(), backgroundColor, borderColor);
     }
+
 }
