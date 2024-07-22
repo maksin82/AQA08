@@ -7,7 +7,7 @@ public class Main {
                 {"7", "8", "9", "10"}, {"7", "4", "1", "2", "4"}};
         String[][] arrStr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
                 {"7", "8", "9", "10"}, {"7", "4", "one", "2"}};
-        String[][] arrChar = {{"1", "2", "%", "4"}, {"4", "5", "6", "7"},
+        String[][] arrSymbol = {{"1", "2", "%", "4"}, {"4", "5", "6", "7"},
                 {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
         try {
             System.out.println(sumArr(arr));
@@ -28,7 +28,7 @@ public class Main {
         }
 
         try {
-            System.out.println(sumArr(arrChar));
+            System.out.println(sumArr(arrSymbol));
         } catch (MyArraySizeException | MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
