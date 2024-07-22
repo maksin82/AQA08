@@ -1,7 +1,7 @@
 package animal;
 
-public class Animal {
-    private String name;
+abstract class Animal {
+    private final String name;
     private static int counterAnimal = 0;
 
     public Animal(String name) {

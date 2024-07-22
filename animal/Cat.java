@@ -31,7 +31,13 @@ public class Cat extends Animal {
     }
 
     public static void getCounterCat() {
-        System.out.println(counterCat);
+        if (counterCat % 10 == 1 && counterCat % 100 != 11) {
+            System.out.println(counterCat + " кот");
+        } else if ((counterCat % 10 >= 2 && counterCat % 10 <= 4) && !(counterCat % 100 >= 12 && counterCat % 100 <= 14)) {
+            System.out.println(counterCat + " кота");
+        } else {
+            System.out.println(counterCat + " котов");
+        }
     }
 
     public void feedCat(Bowl bowl, int food) {

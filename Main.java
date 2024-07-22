@@ -1,4 +1,3 @@
-import animal.Animal;
 import animal.Bowl;
 import animal.Cat;
 import animal.Dog;
@@ -11,16 +10,14 @@ public class Main {
 
         System.out.println("_________Task 1_________");
 
-        Cat catMax = new Cat("Max");
-        catMax.swim(200);
-
         Cat[] cats = new Cat[5];
-        cats[0] = new Cat("Murzik");
-        cats[1] = catMax;
-        cats[2] = new Cat("Murka");
-        cats[3] = new Cat("Pushok");
-        cats[4] = new Cat("Barsik");
+        cats[0] = new Cat("Мурзик");
+        cats[1] = new Cat("Семка");
+        cats[2] = new Cat("Мурка");
+        cats[3] = new Cat("Пушок");
+        cats[4] = new Cat("Барсик");
 
+        cats[0].swim(200);
         Cat.getCounterCat();
 
         Bowl bowl = new Bowl();
@@ -37,9 +34,9 @@ public class Main {
         dogBobik.swim(5);
 
         Dog.getCounterDog();
-        Animal.getAnimalNumber();
 
         System.out.println("_________Task 2_________");
+
         Circle circle = new Circle("red", "black", new double[]{15});
         circle.displayFigure();
 
