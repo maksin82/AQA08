@@ -20,13 +20,21 @@ public class Main {
         cats[0].swim(200);
         Cat.getCounterCat();
 
+        Bowl bowl = new Bowl();
+        bowl.setBowl(200);
+
+        for (Cat cat: cats) {
+            cat.feedCat(bowl, 50);
+            cat.getSatirty();
+        }
+
 
         Dog dogBobik = new Dog("Бобик");
         dogBobik.swim(5);
 
         Dog.getCounterDog();
 
-        System.out.println("_________Task 2_________");
+        System.out.println("\n_________Task 2_________");
 
         Circle circle = new Circle("red", "black", new double[]{14});
         circle.displayFigure();
