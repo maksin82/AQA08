@@ -1,6 +1,7 @@
 package figure;
 
 public abstract class Figure implements Perimetr, Area {
+
     private final String backgroundColor;
     private final String borderColor;
     private final double[] param;

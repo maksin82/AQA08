@@ -1,6 +1,7 @@
 package animal;
 
 public class Cat extends Animal {
+
     private boolean satiety = false;
     private static int counterCat = 0;
 

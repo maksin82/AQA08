@@ -1,6 +1,7 @@
 package figure;
 
 public class Triangle extends Figure implements Area, Perimetr{
+
     public Triangle(String backgroundColor, String borderColor, double[] arr) {
         super(backgroundColor, borderColor, arr);
     }

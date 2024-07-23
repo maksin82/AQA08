@@ -34,7 +34,7 @@ public class Main {
 
         Dog.getCounterDog();
 
-        System.out.println("_________Task 2_________");
+        System.out.println("\n_________Task 2_________");
 
         Circle circle = new Circle("red", "black", new double[]{15});
         circle.displayFigure();

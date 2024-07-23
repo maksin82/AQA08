@@ -1,6 +1,7 @@
 package animal;
 
 public class Dog extends Animal {
+
     private static int counterDog = 0;
 
     public Dog(String name) {
