@@ -1,48 +1,52 @@
-import animal.Bowl;
-import animal.Cat;
-import animal.Dog;
-import figure.Circle;
-import figure.Rectangle;
-import figure.Triangle;
 
 public class Main {
     public static void main(String[] args) {
-      
-        System.out.println("_________Task 1_________");
+        String[][] arr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
+        String[][] arrSize = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
+        String[][] arrStr = {{"1", "2", "3", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "one", "2"}};
+        String[][] arrSymbol = {{"1", "2", "%", "4"}, {"4", "5", "6", "7"},
+                {"7", "8", "9", "10"}, {"7", "4", "1", "2"}};
 
-        Cat[] cats = new Cat[5];
-        cats[0] = new Cat("Мурзик");
-        cats[1] = new Cat("Семка");
-        cats[2] = new Cat("Мурка");
-        cats[3] = new Cat("Пушок");
-        cats[4] = new Cat("Барсик");
+        processArray(arr);
+        processArray(arrSize);
+        processArray(arrStr);
+        processArray(arrSymbol);
+    }
 
-        cats[0].swim(200);
-        Cat.getCounterCat();
 
-        Bowl bowl = new Bowl();
-        bowl.setBowl(200);
+    public static int sumArr(String[][] arr) throws MyArraySizeException, MyArrayDataException {
+        int sum = 0;
 
-        for (Cat cat: cats) {
-            cat.feedCat(bowl, 50);
-            cat.getSatirty();
+        if (arr.length != 4) {
+            throw new MyArraySizeException();
         }
 
-        
-        Dog dogBobik = new Dog("Бобик");
-        dogBobik.swim(5);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].length != 4) {
+                throw new MyArraySizeException();
+            }
 
-        Dog.getCounterDog();
+            for (int j = 0; j < arr[i].length; j++) {
+                if (!(arr[i][j]).matches("-?\\d+")) {
+                    throw new MyArrayDataException(i, j);
+                } else {
+                    sum += Integer.parseInt(arr[i][j]);
+                }
+            }
+        }
+        return sum;
+    }
 
-        System.out.println("\n_________Task 2_________");
 
-        Circle circle = new Circle("red", "black", new double[]{15});
-        circle.displayFigure();
-
-        Triangle triangle = new Triangle("green", "white", new double[]{7, 5, 3});
-        triangle.displayFigure();
-
-        Rectangle rectangle = new Rectangle("yellow", "braun", new double[]{7, 5});
-        rectangle.displayFigure();
+    public static void processArray(String[][] arr) {
+        try {
+            System.out.println(sumArr(arr));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
+
