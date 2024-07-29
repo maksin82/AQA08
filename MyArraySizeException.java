@@ -1,5 +1,5 @@
 public class MyArraySizeException extends Exception {
-    public MyArraySizeException() {
-        super("Массив должен быть размером 4х4");
+    public MyArraySizeException(String message) {
+        super(message);
     }
 }
